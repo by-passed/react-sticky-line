@@ -1,0 +1,56 @@
+{
+  "name": "react-sticky-line",
+  "version": "0.0.1",
+  "description": "页面中经常会有多个组件有吸顶状态，比如沉浸式导航头，楼层tab，条件筛选区域。由于页面是开放给用户自由搭建的，每个有吸顶诉求的组件不知道当前页面中有多少各吸顶组件，也不能确定自己的吸顶顺序。硬编码的方式写死吸顶，或者配置吸顶的位置都会让组件无法适用度低。",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "rollup": "cross-env NODE_ENV=production rollup -c",
+    "demo": "cross-env ROLLUP_WATCH=true rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/by-passed/react-sticky-line.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/by-passed/react-sticky-line/issues"
+  },
+  "homepage": "https://github.com/by-passed/react-sticky-line#readme",
+  "dependencies": {
+    "react": "^16.x",
+    "react-dom": "^16.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.14.5",
+    "@babel/runtime-corejs3": "^7.14.5",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.3.1",
+    "rollup": "^2.51.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-live-server": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "lib/*"
+  ]
+}

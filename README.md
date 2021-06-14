@@ -16,9 +16,9 @@
 
 ## 示例代码
 ```js
-import { createElement, render } from 'rax';
-import DriverUniversal from 'driver-universal';
-import Sticky, { StickyView, createStickyRef } from '@ali/rox-sticky-helper';
+import React from 'react';
+import { render } from 'react-dom';
+import Sticky, { StickyView, createStickyRef } from 'react-sticky-line';
 
 function Placeholder(props) {
   return (
@@ -41,7 +41,7 @@ class Module1 extends Sticky {
   }
   render() {
     return (
-      <div id="d1" style={{ width: 750, lineHeight: 100, backgroundColor: '#fff' }}>
+      <div id="d1" style={{ width: 750, lineHeight: '100px', backgroundColor: '#fff' }}>
         吸顶模块1
       </div>
     );
@@ -53,7 +53,7 @@ function Module2() {
   return <StickyView
     getStickyStyle={() => ({ color: '#fff', backgroundColor: '#f15a4a' })}
   >
-    <div id="d2" style={{ width: 750, lineHeight: 100, backgroundColor: '#fff' }}>
+    <div id="d2" style={{ width: 750, lineHeight: '100px', backgroundColor: '#fff' }}>
       吸顶模块2
     </div>
   </StickyView>;
@@ -68,14 +68,15 @@ function Module3() {
   });
   return (
     <div ref={ref}
-      style={{ width: 750, lineHeight: 100, backgroundColor: '#fff' }}
+      style={{ width: 750, lineHeight: '100px', backgroundColor: '#fff' }}
     >
       吸顶模块hook
     </div>
   );
 }
 
-render(<div>
+render(
+  <div>
   <Placeholder style={{ height: 200 }} />
   <Module1 />
   <Placeholder style={{ height: 200 }} />
@@ -83,7 +84,9 @@ render(<div>
   <Placeholder style={{ height: 200 }} />
   <Module3 />
   <Placeholder style={{ height: 2500 }} />
-</div>, null, { driver: DriverUniversal });
+  </div>
+  , document.getElementById('app')
+);
 ```
 
 # 控制吸顶判断
@@ -91,7 +94,7 @@ render(<div>
 
 ## 代码
 ```js
-import Sticky from '@ali/rox-sticky-helper';
+import Sticky from 'react-sticky-line';
 class Module1 extends Sticky {
   onStickyScroll(helper) {
     // 默认处理逻辑
@@ -125,8 +128,8 @@ class Module1 extends Sticky {
 需要注意的是，如果组件的高度是变化的（比如一开始不渲染，异步请求数据后再渲染），请在高度变化后手动更新占位元素高度，调用stickyAPI.updatePlaceholder(组件实例)
 
 ```js
-import { useEffect } from 'rax';
-import Sticky, { StickyView, createStickyRef } from '@ali/rox-sticky-helper';
+import { useEffect } from 'react';
+import Sticky, { StickyView, createStickyRef } from 'react-sticky-line';
 
 // 类组件
 class Module1 extends Sticky {
@@ -175,7 +178,7 @@ function Module3() {
 
 
 ```js
-import Sticky, { StickyView } from '@ali/rox-sticky-helper';
+import Sticky, { StickyView } from 'react-sticky-line';
 
 // 继承方式
 class Module1 extends Sticky {
